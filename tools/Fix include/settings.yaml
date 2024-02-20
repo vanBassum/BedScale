@@ -1,0 +1,15 @@
+parseInfos:
+- path: '../../components/ESP_Base'
+  doCMAKE: true
+  doIncludes: true
+- path: '../../components/ESP_Drivers'
+  doCMAKE: true
+  doIncludes: true
+- path: '../../components/ESP_LVGL'
+  doCMAKE: true
+  doIncludes: true
+- path: '../../main'
+  doCMAKE: true
+  doIncludes: false  
+
+
