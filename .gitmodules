@@ -1,12 +1,6 @@
-[submodule "components/lvgl"]
-	path = components/lvgl
-	url = https://github.com/lvgl/lvgl.git
 [submodule "components/ESP_Base"]
 	path = components/ESP_Base
 	url = https://github.com/vanBassum/ESP_Base.git
 [submodule "components/ESP_Drivers"]
 	path = components/ESP_Drivers
 	url = https://github.com/vanBassum/ESP_Drivers.git
-[submodule "components/ESP_LVGL"]
-	path = components/ESP_LVGL
-	url = https://github.com/vanBassum/ESP_LVGL.git
