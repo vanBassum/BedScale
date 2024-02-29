@@ -31,34 +31,20 @@ constexpr const DeviceProperty spiBus_0_config[] = {
 
 
 //----------------------------
-//          ST7796S
+//          HX711
 //----------------------------
-constexpr const DeviceProperty spiDevice_0_config[] = {     
-    {"key",              DEVICE_PROP_STR("spiDevice_0")},
-    {"compatible",       DEVICE_PROP_STR("espSpiDevice")},
-    {"spiBus",           DEVICE_PROP_STR("spiBus_0")},
-    {"clock_speed_hz",   DEVICE_PROP_I32(6 * 1000 * 1000)}, 
-    {"spics_io_num",     DEVICE_PROP_I32(GPIO_NUM_NC)},
-    {"queue_size",       DEVICE_PROP_I32(7)},
-    {"spics_io_num",     DEVICE_PROP_I32(GPIO_NUM_15)},
-    DEVICE_END_MARKER // End marker
-};
-
-constexpr const DeviceProperty st7796s_0_config[] = {
-    {"key",              DEVICE_PROP_STR("st7796s_0")},
-    {"compatible",       DEVICE_PROP_STR("ST7796S")},
-    {"spiDevice",        DEVICE_PROP_STR("spiDevice_0")},
-    {"dcPin",            DEVICE_PROP_STR("espGpio_0,2,5")},  // GPIO_NUM_21         2*8 + 5
-    {"rstPin",           DEVICE_PROP_STR("espGpio_0,2,6")},  // GPIO_NUM_22         2*8 + 6
-    {"blckPin",          DEVICE_PROP_STR("espGpio_0,2,7")},  // GPIO_NUM_23         2*8 + 7
+constexpr const DeviceProperty hx711_0_config[] = {
+    {"key",              DEVICE_PROP_STR("hx711_0")},
+    {"compatible",       DEVICE_PROP_STR("HX711")},
+    {"dataPin",          DEVICE_PROP_STR("espGpio_0,2,3")},  // GPIO_NUM_19         2*8 + 3
+    {"clkPin",           DEVICE_PROP_STR("espGpio_0,2,5")},  // GPIO_NUM_21         2*8 + 5
     DEVICE_END_MARKER // End marker
 };
 
 constexpr const Device deviceTree[] = {
     espGpio_0_config,
-    spiBus_0_config,
-    spiDevice_0_config,
-    st7796s_0_config,
+    //spiBus_0_config,
+    hx711_0_config,
     nullptr // End marker
 };
 
