@@ -29,22 +29,23 @@ constexpr const DeviceProperty spiBus_0_config[] = {
     DEVICE_END_MARKER // End marker
 };
 
-
-//----------------------------
-//          HX711
-//----------------------------
-constexpr const DeviceProperty hx711_0_config[] = {
-    {"key",              DEVICE_PROP_STR("hx711_0")},
-    {"compatible",       DEVICE_PROP_STR("HX711")},
-    {"dataPin",          DEVICE_PROP_STR("espGpio_0,2,3")},  // GPIO_NUM_19         2*8 + 3
-    {"clkPin",           DEVICE_PROP_STR("espGpio_0,2,5")},  // GPIO_NUM_21         2*8 + 5
+constexpr const DeviceProperty uart_0_config[] = {
+    {"key",             DEVICE_PROP_STR("uart_0")},
+    {"compatible",      DEVICE_PROP_STR("ESPUart")},
+    {"portNo",          DEVICE_PROP_I32(UART_NUM_1)},
+    {"txPin",           DEVICE_PROP_I32(GPIO_NUM_17)},
+    {"rxPin",           DEVICE_PROP_I32(GPIO_NUM_16)},
+    {"bufferSize",      DEVICE_PROP_I32(128)},
     DEVICE_END_MARKER // End marker
 };
 
+
+
+
 constexpr const Device deviceTree[] = {
-    espGpio_0_config,
+    uart_0_config,
+    //espGpio_0_config,
     //spiBus_0_config,
-    hx711_0_config,
     nullptr // End marker
 };
 
